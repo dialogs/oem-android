@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "3669445316",
+    "firebase_url": "https://android-oem-sample.firebaseio.com",
+    "project_id": "android-oem-sample",
+    "storage_bucket": "android-oem-sample.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:3669445316:android:75cc4dc2c74d4869ae1791",
+        "android_client_info": {
+          "package_name": "im.dlg.oem_test"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "3669445316-1pgjr51c53bj96o399t5eb2aph7va45m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAfmY_LJYB-RPiUTzNukwOTVkJYmtvmWps"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "3669445316-1pgjr51c53bj96o399t5eb2aph7va45m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

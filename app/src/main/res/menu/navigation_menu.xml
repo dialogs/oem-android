@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_item_default"
+        android:icon="@drawable/default_tab_icon"
+        android:title="@string/default_tab" />
+    <item
+        android:id="@+id/menu_item_dialogs"
+        android:icon="@drawable/dialog_tab_icon"
+        android:title="@string/dialog_tab" />
+</menu>
