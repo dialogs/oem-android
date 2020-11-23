@@ -40,16 +40,16 @@ android {
             resValue "string", "app_version_name", "${defaultConfig.versionName}"
             resValue "string", "app_version_code", "${defaultConfig.versionCode}"
             resValue "string", "app_version_full", "${defaultConfig.versionName}-${defaultConfig.versionCode}-debug"
-            buildConfigField("String", "TEST_USER", "${userCredential.user}")
-            buildConfigField("String", "TEST_PASSWORD", "${userCredential.password}")
+            buildConfigField("String", "TEST_USER", "\"${userCredential.user}\"")
+            buildConfigField("String", "TEST_PASSWORD", "\"${userCredential.password}\"")
         }
 
         release {
             resValue "string", "app_version_name", "${defaultConfig.versionName}"
             resValue "string", "app_version_code", "${defaultConfig.versionCode}"
             resValue "string", "app_version_full", "${defaultConfig.versionName}-${defaultConfig.versionCode}"
-            buildConfigField("String", "TEST_USER", "${userCredential.user}")
-            buildConfigField("String", "TEST_PASSWORD", "${userCredential.password}")
+            buildConfigField("String", "TEST_USER", "\"${userCredential.user}\"")
+            buildConfigField("String", "TEST_PASSWORD", "\"${userCredential.password}\"")
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
@@ -102,8 +102,8 @@ def getUserCredentials() {
         project.rootProject.file('local.properties').newDataInputStream()?.withCloseable { file ->
             properties.load(file)
         }
-        testUser = properties.getProperty('testUser') ?: "user"
-        testPassword = properties.getProperty('testPassword') ?: "pass"
+        testUser = properties.getProperty('testUser') ?: 'user'
+        testPassword = properties.getProperty('testPassword') ?: 'pass'
     } catch (Exception ignored) {
         println("Warning: local.properties loading failed #getUserCredentials")
     }
