@@ -16,10 +16,6 @@ buildscript {
     }
 }
 
-project.ext {
-    userCredential = getUserCredentials()
-}
-
 android {
     compileSdkVersion 29
     buildToolsVersion "30.0.2"
@@ -37,19 +33,11 @@ android {
     buildTypes {
 
         debug {
-            resValue "string", "app_version_name", "${defaultConfig.versionName}"
             resValue "string", "app_version_code", "${defaultConfig.versionCode}"
-            resValue "string", "app_version_full", "${defaultConfig.versionName}-${defaultConfig.versionCode}-debug"
-            buildConfigField("String", "TEST_USER", "\"${userCredential.user}\"")
-            buildConfigField("String", "TEST_PASSWORD", "\"${userCredential.password}\"")
         }
 
         release {
-            resValue "string", "app_version_name", "${defaultConfig.versionName}"
             resValue "string", "app_version_code", "${defaultConfig.versionCode}"
-            resValue "string", "app_version_full", "${defaultConfig.versionName}-${defaultConfig.versionCode}"
-            buildConfigField("String", "TEST_USER", "\"${userCredential.user}\"")
-            buildConfigField("String", "TEST_PASSWORD", "\"${userCredential.password}\"")
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
@@ -70,7 +58,6 @@ dependencies {
     implementation("im.dlg:sdk:0+") {
         transitive = true
     }
-//    implementation project(":sdk")
     implementation "org.jetbrains.kotlin:kotlin-stdlib:1.4.10"
     implementation 'androidx.core:core-ktx:1.3.1'
     implementation 'androidx.appcompat:appcompat:1.2.0'
@@ -92,27 +79,6 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
-}
-
-def getUserCredentials() {
-    def testUser = null
-    def testPassword = null
-    try {
-        Properties properties = new Properties()
-        project.rootProject.file('local.properties').newDataInputStream()?.withCloseable { file ->
-            properties.load(file)
-        }
-        testUser = properties.getProperty('testUser') ?: 'user'
-        testPassword = properties.getProperty('testPassword') ?: 'pass'
-    } catch (Exception ignored) {
-        println("Warning: local.properties loading failed #getUserCredentials")
-    }
-    return new TestUserCredential(user: testUser, password: testPassword)
-}
-
-class TestUserCredential {
-    String user
-    String password
 }
 
 apply plugin: 'com.google.gms.google-services'

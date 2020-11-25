@@ -9,7 +9,6 @@ import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import im.dlg.oem_test.BuildConfig
 import im.dlg.oem_test.R
 import im.dlg.sdk.SdkScreen
 import kotlinx.android.synthetic.main.default_fragment.vCallTab
@@ -53,8 +52,8 @@ class DefaultFragment : Fragment() {
         viewModel.observeState().observe(viewLifecycleOwner) { state ->
             when (state) {
                 State.Initial -> {
-                    vName.setText(BuildConfig.TEST_USER)
-                    vPassword.setText(BuildConfig.TEST_PASSWORD)
+                    vName.setText("")
+                    vPassword.setText("")
                     vLogin.isEnabled = true
                     vLogout.isEnabled = true
                     vLog.text = "$TEST_HOST:$TEST_PORT"

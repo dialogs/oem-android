@@ -25,21 +25,8 @@ buildscript {
 
 allprojects {
     repositories {
-        maven { url "$rootDir/repo" }
         maven {
             url "https://external-nexus.dlg.im/nexus/repository/mvn-android/"
-
-            Properties properties = new Properties()
-            try {
-                project.rootProject.file('local.properties').newDataInputStream().withCloseable { file ->
-                    properties.load(file)
-                }
-            } catch (Exception ignored) { }
-
-            credentials {
-                username System.getenv('oemNexusUsernameRead') ?: properties.getProperty('oemNexusUsernameRead')
-                password System.getenv('oemNexusPasswordRead') ?: properties.getProperty('oemNexusPasswordRead')
-            }
         }
         google()
         jcenter()
