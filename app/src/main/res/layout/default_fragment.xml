@@ -1,72 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp">
+    android:fillViewport="true">
 
-    <TextView
-        android:id="@+id/vLog"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:padding="16dp">
 
-    <EditText
-        android:id="@+id/vName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
-        android:hint="name"
-        android:inputType="text"
-        app:layout_constraintBottom_toTopOf="@id/vPassword"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_chainStyle="packed" />
+        <TextView
+            android:id="@+id/vLog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/vPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp"
-        android:hint="password"
-        android:inputType="text"
-        app:layout_constraintBottom_toTopOf="@id/vLogin"
-        app:layout_constraintTop_toBottomOf="@id/vName" />
+        <EditText
+            android:id="@+id/vName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:hint="name"
+            android:inputType="text"
+            app:layout_constraintBottom_toTopOf="@id/vPassword"
+            app:layout_constraintTop_toBottomOf="@id/vLog"
+            app:layout_constraintVertical_chainStyle="packed" />
 
-    <Button
-        android:id="@+id/vLogin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:text="LOGIN"
-        app:layout_constraintBottom_toTopOf="@id/vLogout"
-        app:layout_constraintTop_toBottomOf="@id/vPassword" />
+        <EditText
+            android:id="@+id/vPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:hint="password"
+            android:inputType="text"
+            app:layout_constraintBottom_toTopOf="@id/vLogin"
+            app:layout_constraintTop_toBottomOf="@id/vName" />
 
-    <Button
-        android:id="@+id/vLogout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:text="LOGOUT"
-        app:layout_constraintBottom_toTopOf="@id/vCallTab"
-        app:layout_constraintTop_toBottomOf="@id/vLogin" />
+        <Button
+            android:id="@+id/vLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="LOGIN"
+            app:layout_constraintBottom_toTopOf="@id/vLogout"
+            app:layout_constraintTop_toBottomOf="@id/vPassword" />
 
-    <Button
-        android:id="@+id/vCallTab"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:text="Select Contacts Tab"
-        app:layout_constraintBottom_toTopOf="@id/vDialogTab"
-        app:layout_constraintTop_toBottomOf="@id/vLogout" />
+        <Button
+            android:id="@+id/vLogout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="LOGOUT"
+            app:layout_constraintBottom_toTopOf="@id/vCallTab"
+            app:layout_constraintTop_toBottomOf="@id/vLogin" />
 
-    <Button
-        android:id="@+id/vDialogTab"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:text="Select Dialog Tab"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/vCallTab" />
+        <Button
+            android:id="@+id/vCallTab"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Select Contacts Tab"
+            app:layout_constraintBottom_toTopOf="@id/vDialogTab"
+            app:layout_constraintTop_toBottomOf="@id/vLogout" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <Button
+            android:id="@+id/vDialogTab"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Select Dialog Tab"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/vCallTab" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

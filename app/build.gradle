@@ -55,7 +55,7 @@ android {
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.aar","*.jar"])
-    implementation("im.dlg:sdk:0+") {
+    implementation("im.dlg:sdk:2.10.1") {
         transitive = true
     }
     implementation "org.jetbrains.kotlin:kotlin-stdlib:1.4.10"
